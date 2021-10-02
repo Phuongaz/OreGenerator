@@ -77,8 +77,10 @@ public class OregenEntity extends BlockEntity {
         }else{
             this.currentTick -= 1;
         }
-
         if(this.getLevel().getBlock(this).getId() == 0){
+            checkBreak();
+        }
+        if(this.getLevel().getBlock(this).getId() != Block.STONECUTTER){
             checkBreak();
         }
         return true;
